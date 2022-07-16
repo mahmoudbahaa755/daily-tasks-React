@@ -4,12 +4,15 @@ import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
 import './CourseGoalList.css';
 
 const CourseGoalList = props => {
-  console.log('props :')
-  console.log(props)
+
   return (
-      <li>
-        {props.goal}
-      </li>
+      <ul>
+      {props.courseGoals.map(e => {
+        return(
+          <CourseGoalItem goal={e.goal} key={e.id} id={e.id} />
+        )
+      })}
+      </ul>
   );
 }
 

@@ -6,14 +6,24 @@ import './App.css';
 
 const App = () => {
   const [courseGoals, setCourseGoals] = useState([
+    { }
 
   ]);
-  let content= (<p style={{ textAlign: 'center' }}>No goals found. Maybe start adding now?</p>)
-  const addGoal = goal =>{
-    console.log('goal : ')
-    console.log(goal)
-    content += ( <p style={{ textAlign: 'center' }}>{goal}</p>)
+  let content = (
+      <CourseGoalList courseGoals={courseGoals} />
+    )
+  if(courseGoals.length === 0){
+    
+     content= (<p style={{ textAlign: 'center' }}>No goals found. Maybe start adding now?</p>)
   }
+  const addGoal = goal =>{
+    setCourseGoals(prevGoals =>{
+      return [{id: Math.random().toString() ,goal:goal} , ...prevGoals]
+    })
+    console.log(courseGoals)
+  }
+  
+  
 
   return (
     <div>
