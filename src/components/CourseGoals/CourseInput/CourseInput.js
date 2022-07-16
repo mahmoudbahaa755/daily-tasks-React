@@ -9,16 +9,17 @@ const addClosureGoal = e =>{
 
 }
 const submitClosureGoal = e =>{
+  if(inputGoal.trim().length > 0){
   props.addGoal(inputGoal);
-
-setInputGoal('')
+  setInputGoal('')
+  }
 }
       return (
         // <form onClick={submitClosureGoal}>
 
         <div className='course-input'>
-          <h2>Course Goal</h2>
-          <input type='text' className='input-goal' value={inputGoal} onChange={addClosureGoal} placeholder='Enter a course goal' />
+          <h2>Day Goals</h2>
+          <input type='text' className='input-goal' value={inputGoal} onChange={addClosureGoal} placeholder='Enter your day goal' />
            <button onClick={submitClosureGoal}  type='submit'  className="button" >
         Add Goal
     </button>

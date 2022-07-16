@@ -1,9 +1,9 @@
 .goal-list{
-        margin: 5px;
+        margin: 5px auto;
     list-style: none;
     background-color: #8A1155;
     color: whitesmoke;
-    width: 323px;
+     width:60%;
     height: 40px;
     padding: 10px 20px;
     border-radius: 5px;
