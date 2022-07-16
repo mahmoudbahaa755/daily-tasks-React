@@ -6,11 +6,14 @@ import './App.css';
 
 const App = () => {
   const [courseGoals, setCourseGoals] = useState([
-    { }
-
+   
   ]);
+  const deleteSelectedGoalByID = (id) => {
+    setCourseGoals(courseGoals.filter(e => e.id !== id));
+
+  }
   let content = (
-      <CourseGoalList courseGoals={courseGoals} />
+      <CourseGoalList courseGoals={courseGoals} deleteSelectedGoalByID={deleteSelectedGoalByID} />
     )
   if(courseGoals.length === 0){
     

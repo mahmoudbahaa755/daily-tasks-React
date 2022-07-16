@@ -4,14 +4,14 @@ import './CourseGoalItem.css';
 
 const CourseGoalItem = props => {
   // const [deleteText, setDeleteText] = useState('');
-  const deleteGoal = (e) => {
-    
-    console.log(props.id)
+  const deleteGoalByClicking = (e) => {
+      props.deleteGoal(props.id);
   }
   
 
+
   return (
-     <li className='goal-list' id={props.id} onClick={deleteGoal}>
+     <li className='goal-list' id={props.id} onClick={deleteGoalByClicking}>
         {props.goal}
       </li>
   );
