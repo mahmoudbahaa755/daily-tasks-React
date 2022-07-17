@@ -1,18 +1,33 @@
-import React from 'react';
+import React ,{useState} from 'react';
 
-import './CourseGoalItem.css';
+import style from './CourseGoalItem.module.css';
 
 const CourseGoalItem = props => {
-  // const [deleteText, setDeleteText] = useState('');
+
   const deleteGoalByClicking = (e) => {
       props.deleteGoal(props.id);
   }
+  const [taskDoneOrNot,setTaskDoneOrNot]= useState(false);
   
+const taskDone=(e)=>{
+      props.taskDone(props.id,props.done);
+      if (taskDoneOrNot === false) {
+      setTaskDoneOrNot(true);
+      }
+      else{
+      setTaskDoneOrNot(false);
 
+      }
+}
 
   return (
-     <li className='goal-list' id={props.id} onClick={deleteGoalByClicking}>
+     <li className={`${style['goal-list']} ${taskDoneOrNot ? style['mark-it'] : ''}`} id={props.id} >
         {props.goal}
+        <div>
+
+        <button type='button' className={style.button}  onClick={taskDone}>{taskDoneOrNot ?'Undo' :'Done'}</button>
+        <button type='button' className={style.button} onClick={deleteGoalByClicking}>X</button>
+        </div>
       </li>
   );
 }
