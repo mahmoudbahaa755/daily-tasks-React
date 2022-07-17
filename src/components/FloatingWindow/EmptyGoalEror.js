@@ -18,10 +18,10 @@ function EmptyGoal(props){
 
     return(
         <div>
-    <div className={`${style['black-background']} ${props.errorOrNot === true ? style['hide-error']: ''}`} onClick={closeErrorMessage}>
+    <div className={`${style['black-background']} ${showError != true ? style['hide-error']: ''}`} onClick={closeErrorMessage}>
 
     </div>
-        <div className={`${style['floating-window']} ${props.errorOrNot === true ? style['hide-error']: ''}`}>
+        <div className={`${style['floating-window']} ${showError != true ? style['hide-error']: ''}`}>
         <header>
 
             <h3 className={style.h3}>An Error Occurred</h3>

@@ -4,7 +4,7 @@ import './CourseInput.css';
 
 const CourseInput = (props) => {
 const [inputGoal, setInputGoal] = useState('');
-const [emptyGoalError, setEmptyGoalError] = useState(true);
+const [emptyGoalError, setEmptyGoalError] = useState(false);
 const addClosureGoal = e =>{
   setInputGoal(e.target.value);
 
@@ -12,7 +12,7 @@ const addClosureGoal = e =>{
 const submitClosureGoal = e =>{
   console.log('clicked')
   if(inputGoal.trim().length === 0){
-    setEmptyGoalError(false);
+    setEmptyGoalError(true);
   }
   else{
   }
@@ -25,14 +25,13 @@ const submitClosureGoal = e =>{
       return (
 
         <div className='course-input'>
+    {emptyGoalError === true ?( <EmptyGoalEror errorOrNot={emptyGoalError} />) : (<span></span>)}
           <h2>Day Goals</h2>
           <input type='text' className='input-goal' value={inputGoal} onChange={addClosureGoal} placeholder='Enter your day goal' />
            <button onClick={submitClosureGoal}  type='submit'  className="button" >
         Add Goal
     </button>
-    <EmptyGoalEror errorOrNot={emptyGoalError}/>
         </div>
-
       );
 }
 
