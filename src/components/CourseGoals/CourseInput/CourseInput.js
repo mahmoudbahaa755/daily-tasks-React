@@ -4,15 +4,17 @@ import './CourseInput.css';
 
 const CourseInput = (props) => {
 const [inputGoal, setInputGoal] = useState('');
-const [emptyGoalError, setEmptyGoalError] = useState(false);
+const [emptyGoalError, setEmptyGoalError] = useState(true);
 const addClosureGoal = e =>{
   setInputGoal(e.target.value);
 
 }
 const submitClosureGoal = e =>{
-  e.preventDefault();
+  console.log('clicked')
   if(inputGoal.trim().length === 0){
-    setEmptyGoalError(true);
+    setEmptyGoalError(false);
+  }
+  else{
   }
   if(inputGoal.trim().length > 0){
   props.addGoal(inputGoal);
@@ -28,7 +30,7 @@ const submitClosureGoal = e =>{
            <button onClick={submitClosureGoal}  type='submit'  className="button" >
         Add Goal
     </button>
-    <EmptyGoalEror  errorOrNot={emptyGoalError}/>
+    <EmptyGoalEror errorOrNot={emptyGoalError}/>
         </div>
 
       );

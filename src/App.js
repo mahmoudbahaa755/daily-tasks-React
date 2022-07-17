@@ -31,13 +31,12 @@ const App = () => {
     )
   if(courseGoals.length === 0){
     
-     content= (<p style={{ textAlign: 'center' ,color:'whitesmoke'}}>No goals found. Maybe start adding now?</p>)
+     content= (<p style={{ textAlign: 'center'}}>No goals found. Maybe start adding now?</p>)
   }
   const addGoal = goal =>{
     setCourseGoals(prevGoals =>{
       return [{id: Math.random().toString() ,goal:goal ,done:false} , ...prevGoals]
     })
-    console.log(courseGoals)
   }
   
   

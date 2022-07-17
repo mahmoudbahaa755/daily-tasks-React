@@ -3,17 +3,39 @@ import style from './EmptyGoal.module.css';
 
 
 function EmptyGoal(props){
-    const [errorOrNot, setErrorOrNot] = useState(props.errorOrNot);
+    console.log(props.errorOrNot)
+    const [showError, setErrorOrNot] = useState(props.errorOrNot);
     const closeErrorMessage = () =>{
-        setErrorOrNot(true)
+        if(showError){
+            setErrorOrNot(false);
+        }
+        else{
+
+            setErrorOrNot(true)
+        }
     }
 
 
     return(
-        <div className={`${style['floating-window']} ${!errorOrNot ? style['hide-error'] :''}`}>
-            <h3>Please,don't enter empty String</h3>
-            <button type="button" onClick={closeErrorMessage}>close</button>
+        <div>
+    <div className={`${style['black-background']} ${props.errorOrNot === true ? style['hide-error']: ''}`} onClick={closeErrorMessage}>
 
+    </div>
+        <div className={`${style['floating-window']} ${props.errorOrNot === true ? style['hide-error']: ''}`}>
+        <header>
+
+            <h3 className={style.h3}>An Error Occurred</h3>
+        </header>
+        <section>
+            
+            <p>Please,don't enter empty String</p>
+        </section>
+            <footer>
+
+            <button type="button" className={style.button} onClick={closeErrorMessage}>close</button>
+            </footer>
+
+        </div>
         </div>
     )
 }
