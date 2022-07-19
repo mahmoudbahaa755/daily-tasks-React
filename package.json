@@ -1,5 +1,4 @@
 {
-  "homepage": "https://mahmoudbahaa755.github.io/daily-tasks-React",
   "name": "react-complete-guide",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +12,8 @@
     "styled-components": "^5.3.5",
     "web-vitals": "^0.2.4"
   },
+  "homepage": "https://mahmoudbahaa755.github.io/daily-tasks-React/",
+
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
