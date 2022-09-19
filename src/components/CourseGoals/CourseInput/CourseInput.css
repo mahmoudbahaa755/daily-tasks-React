@@ -29,3 +29,7 @@
 h2{
     color: black;
 }
+.button-display{
+       display: flex;
+    justify-content: space-evenly;
+}

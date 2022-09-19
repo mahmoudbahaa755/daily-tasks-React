@@ -2,10 +2,10 @@ import React from 'react';
 
 import './Button.css';
 
-const Button = () => {
+const Button = (props) => {
   return (
     <button  type='submit'  className="button" >
-        Add Goal
+        {props.buttonText}
     </button>
   );
 };

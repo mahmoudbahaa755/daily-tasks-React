@@ -1,7 +1,7 @@
 .floating-window{
        position: fixed;
     top: 33%;
-    width: 400px;
+    width: 70%;
     height: 300px;
     background-color: rgba(234, 231, 231);
     z-index: 9;
@@ -34,7 +34,8 @@ h3{
     z-index: 4;
 }
 section{
-    padding-left: 15px;
+    padding-left: 7px;
+    padding-right: 8px;
 }
 footer{
     display: flex;

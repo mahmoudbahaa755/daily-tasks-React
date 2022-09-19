@@ -1,21 +1,24 @@
 import React ,{useState} from "react";
 import style from './EmptyGoal.module.css';
-
+import Container from '../UI/Container'
 
 function EmptyGoal(props){
-    console.log(props.errorOrNot)
+    console.log(props.errorOrNot);
     const [showError, setErrorOrNot] = useState(props.errorOrNot);
     const closeErrorMessage = () =>{
-            setErrorOrNot(!showError)
+            setErrorOrNot(!showError);
       
-    }
+    };
 
 
     return(
-        <div>
+        <React.Fragment>
+
     <div className={`${style['black-background']} ${showError !== true ? style['hide-error']: ''}`} onClick={closeErrorMessage}>
 
     </div>
+        <Container>
+
         <div className={`${style['floating-window']} ${showError !== true ? style['hide-error']: ''}`}>
         <header>
 
@@ -31,7 +34,8 @@ function EmptyGoal(props){
             </footer>
 
         </div>
-        </div>
+        </Container>
+        </React.Fragment>
     )
 }
 
